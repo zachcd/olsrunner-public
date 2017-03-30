@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="team">
+<h2 class="teamName">{{t.teamName}}</h2>
+
+<table class="players">
+	<thead><th>Players</th></thead>
+{% for player in p %}
+<tr class="playerinfo"><td class="playername"> <a href="/ols/p/{{player.SummonerNumber}}">{{player.PlayerIGN}}</a></td> <td class="realname">{{player.PlayerName}}</td> <td> <a href="http://na.op.gg/summoner/userName={{player.PlayerIGN}}">op</a></td> </tr>
+
+{% endfor %}
+</table>
+<br /><br />
+<table class="game">
+	<thead> <th> Game List</th> <th>W/L</th><th>Banned Against</th><th>Played</th></thead>
+{% for game in gs %}
+
+<tr class="gameinfo"> <td class="gamelink"> <a href="/ols/m/{{game.game.Number}}">
+
+	{% if game.t1 == t %}
+	{{game.t2}}
+	{% else %}
+	 {{game.t1}}
+
+	 {% endif %} </a></td> 
+	 {% if game.won == "Lost" %}
+	 <td class="lose">   {{game.won}} </td> 
+	 {% else %}
+	 <td class="win">   {{game.won}} </td> 
+	 {% endif %}
+	 <td class="bans"><img src="{{game.ban1}}"><img src="{{game.ban2}}"><img src="{{game.ban3}}"> </td> <td class="played">
+
+	<figure class="p1"><img src="{{game.player1}}">{% if t == game.t1 %}
+		<figcaption>{{game.gameobj.participants.0.stats.kills}}/{{game.gameobj.participants.0.stats.deaths}}/{{game.gameobj.participants.0.stats.assists}}</figcaption>
+		{% else %}
+		<figcaption>{{game.gameobj.participants.5.stats.kills}}/{{game.gameobj.participants.5.stats.deaths}}/{{game.gameobj.participants.5.stats.assists}}</figcaption>
+		{% endif %}</figure>
+
+	<figure class="p2"><img src="{{game.player2}}">{% if t == game.t1 %}
+		<figcaption>{{game.gameobj.participants.1.stats.kills}}/{{game.gameobj.participants.1.stats.deaths}}/{{game.gameobj.participants.1.stats.assists}}</figcaption>
+		{% else %}
+		<figcaption>{{game.gameobj.participants.6.stats.kills}}/{{game.gameobj.participants.6.stats.deaths}}/{{game.gameobj.participants.6.stats.assists}}</figcaption>
+		{% endif %}</figure>
+	<figure class="p2"><img src="{{game.player3}}">{% if t == game.t1 %}
+		<figcaption>{{game.gameobj.participants.2.stats.kills}}/{{game.gameobj.participants.2.stats.deaths}}/{{game.gameobj.participants.2.stats.assists}}</figcaption>
+		{% else %}
+		<figcaption>{{game.gameobj.participants.7.stats.kills}}/{{game.gameobj.participants.7.stats.deaths}}/{{game.gameobj.participants.7.stats.assists}}</figcaption>
+		{% endif %}</figure>
+
+	<figure class="p2"><img src="{{game.player4}}">{% if t == game.t1 %}
+		<figcaption>{{game.gameobj.participants.3.stats.kills}}/{{game.gameobj.participants.3.stats.deaths}}/{{game.gameobj.participants.3.stats.assists}}</figcaption>
+		{% else %}
+		<figcaption>{{game.gameobj.participants.8.stats.kills}}/{{game.gameobj.participants.8.stats.deaths}}/{{game.gameobj.participants.8.stats.assists}}</figcaption>
+		{% endif %}</figure>
+
+	<figure class="p2"><img src="{{game.player5}}">{% if t == game.t1 %}
+		<figcaption>{{game.gameobj.participants.4.stats.kills}}/{{game.gameobj.participants.4.stats.deaths}}/{{game.gameobj.participants.4.stats.assists}}</figcaption>
+		{% else %}
+		<figcaption>{{game.gameobj.participants.9.stats.kills}}/{{game.gameobj.participants.9.stats.deaths}}/{{game.gameobj.participants.9.stats.assists}}</figcaption>
+		{% endif %}</figure>
+
+</td></tr>
+
+{% endfor %}
+
+</table>	
+</div>
+
+
+{% endblock %}

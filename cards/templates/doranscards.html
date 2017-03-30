@@ -1,0 +1,34 @@
+{% extends "doransbase.html" %}
+
+{% block content %}
+
+<div class="coverflow">
+{% for champ in champions %}
+{% if champ.stats.level >= 5 %}
+<div class="cover five">
+{% elif champ.stats.level == 4 %}
+<div class="cover four">
+{% elif champ.stats.level == 3 %}
+<div class="cover three">
+{% endif %}
+<img src="{{champ.image}}" class="champPic reflect">
+	<h2>{{ champ.name }}</h2>
+	<div class ="points"> {{ champ.stats.points}}  Pts</div>
+	<div class="stats">
+		<div class="topGradetitle"> Top Grade:</div> <div class="grade"> {{ champ.stats.topGrade }}</div>
+		<div class="topkdatitle">Top KDA:</div> <div class="topkda"> {{ champ.stats.topKDA }}</div>
+		<div class="kdatitle">AVG KDA:</div> <div class="avgkda"> {{ champ.stats.KDA }}</div> <div class="kdalist"> {{ champ.stats.avgkills }} / {{ champ.stats.avgdeaths }} / {{ champ.stats.avgassists }} </div>
+		<div class="wintitle">W/L:</div> <div class="winloss"> {{ champ.stats.wins }} - {{ champ.stats.losses }}</div>
+		<div class = "MVPtitle">MVP points(avg)</div> <div class="MVP"> {{ champ.stats.avgMVP }} </div>
+	</div>
+</div>
+{% endfor %}
+</div>
+<script>
+    $(function() {
+        $('.coverflow').coverflow();
+        $(".cover").reflect();
+    });
+
+</script>
+{% endblock %}

@@ -1,0 +1,444 @@
+body{
+	background-image: url("/static/img/background.jpg");
+    background-repeat: no-repeat;
+    background-color: #626262;
+        background-position: center top 2em;
+}
+/*.container {
+    background-color:rgba(255,255,255,0.7);
+}*/
+.home{
+    background-color:rgba(255,255,255,0.7);
+}
+.team {
+    background-color:rgba(255,255,255,0.7);
+    padding:2em;
+}
+
+/* Standings Page */
+.row{
+    /*background-color:rgba(255,255,255,0.7);*/
+    margin-top: 5.5em;
+}
+.leaguename{
+    background-color: white;
+    font-size: 130%;
+}
+
+.teamrow{
+    background-color: white;
+    color: blue;
+}
+.teampoints{
+    color: black;
+}
+.rules { 
+    background-color:rgba(255,255,255,0.7);
+}
+/* Playoff Page */
+/*.playoffcontainer {
+    width: 1400px;
+}
+*/
+.playoffcontainer {
+    margin-top: 5%;
+}
+.series {
+    margin: 4%;
+    padding: 2%;
+    text-align: center;
+    background-color:white;
+}
+.series .time {
+    width: 90%;
+}
+.series .datepicker{
+    width: 90%;
+}
+.unscheduled {
+    margin-top: .3em;
+}
+.team1 a{
+    font-weight: bold;
+    color: #4e6ba3;
+}
+.team2 a{
+    font-weight: bold;
+    color: #b95959;
+}
+#round16left {
+    float:left;
+    position:relative;
+    width: 13%;
+
+}
+#round16left>div {
+    margin-bottom: 15%;
+    border: .3em inset black;
+}
+#round16right {
+    float:left;
+    position:relative;
+    width: 13%;
+    left:65%;
+
+}
+#round16right>div {
+    margin-bottom: 15%;
+    border: .3em inset black;
+}
+#round8left {
+    float:left;
+    position:relative;
+    width: 13%;
+    right:13%;
+    margin-top:6%;
+
+}
+#round8left>div {
+    margin-top:40%;
+    border: .3em inset #cd7f32;
+}
+div div#series9{
+    margin-top:100%;
+}
+#round8right {
+    float:left;
+    position:relative;
+    width: 13%;
+    left:26%;
+    margin-top:6%;
+}
+#round8right>div {
+    margin-top:40%;
+    border: .3em inset #cd7f32;
+}
+div div#series11{
+    margin-top:100%;
+}
+#round4left {
+    float:left;
+    position:relative;
+    width: 13%;
+    right:26%;
+    margin-top:25%;
+  
+}
+#round4left>div {
+      border:.3em inset #C0C0C0;
+}
+#round4right {
+    float:left;
+    position:relative;
+    width: 13%;
+    right:13%;
+    margin-top:25%;
+}
+#round4right>div {
+      border:.3em inset #C0C0C0;
+}
+#round2 {
+    float:left;
+    position:relative;
+    width: 13%;
+    right:39%;
+    margin-top:25%;
+     
+}
+#round2>div {
+    border: .3em inset #C5B358;
+}
+
+
+/*Team Stats Page */
+table.game th {
+    text-align:center;
+    border: 1px outset black;
+
+}
+tr.gameinfo td {
+    padding-top: 2em;
+	margin-right: 5px;
+    margin-left: 5px;
+    border-left: thin solid black;
+    border-right: thin solid black;
+}
+tr.gameinfo figure {
+    margin-top: 38px;
+    float:left;
+}
+tr.gameinfo figcaption {
+    text-align:center;
+    border-bottom: 5px solid black;
+}
+tr.gameinfo img{
+	width: 50px;
+	height: 50px;
+}
+tr td.played {
+    padding-top:1em;
+}
+.bans img{
+    margin-left:5px;
+    margin-right:5px;
+}
+.played img {
+    margin-left:10px;
+    margin-right:10px;
+}
+.win {
+    padding: .5em;
+    background-color: green;
+    color:white;
+    border-bottom: solid thin black;
+}
+.lose {
+    padding: .5em;
+    background-color: red;
+    color:white;
+    border-bottom: solid thin black;
+}
+
+
+/*schedule and general stuff */
+#leaguelogo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.stream1, .stream2, .stream3 {
+    background-color: red;
+    display:none;
+}
+.week{
+    background: rgba(255,255,255,0.7);
+    border-radius: 5px;
+    border: 3px solid #B1B1B1;
+    width: 1200px;
+}
+
+.week thead th {
+    font-size: 1.3em;
+}
+
+#schedulerules {
+    background: rgb(255,255,255);
+    border: 1px solid black;
+    width: 50%;
+margin-lefT: auto;
+margin-right: auto;
+margin-bottom: 20px;
+padding: 30px;
+}
+#standingsrules {
+background: rgb(255,255,255);
+    border: 1px solid black;
+    width: 50%;
+margin-lefT: auto;
+margin-right: auto;
+margin-bottom: 20px;
+padding: 30px;
+
+}
+
+/*Match Page Rules*/
+.match_player {
+    overflow: hidden;
+}
+
+.match_player > div {
+    float: left;
+    border-style: outset;
+}
+
+.match_nameplate {
+    width: 150px;
+    margin: 0px 10px 0px 0px;
+}
+
+.match_items {
+    width: 26px;
+    height: 25px;
+    margin: 0px 20px 0px 0px;
+}
+
+.match_items img {
+    height: 25px;
+    width:  25px;
+}
+.match_kda {
+    width: 50px;
+    margin: 0px 10px 0px 0px;
+    text-align: center;
+}
+
+.match_cs {
+    width: 50px;
+    margin: 0px 10px 0px 0px;
+    text-align: center;
+}
+
+.match_gold {
+    width: 50px;
+    margin: 0px 10px 0px 0px;
+    text-align: center;
+}
+
+
+/* Stats Page */
+
+.paleblue th {
+    position:relative;
+}
+#Team:hover:after {
+    content: "The Team the player is on";
+    position: absolute;
+    top: 20px;
+    left: -10px;
+    background-color: white;
+    border: solid black 1px;
+    border-radius: 1em;
+    padding: .1em;
+    text-align: center;
+}
+
+#name:hover:after {
+    content: "The Summoner Name of the player";
+    position: absolute;
+    top: 20px;
+    left: -10px;
+    background-color: white;
+    border: solid black 1px;
+    border-radius: 1em;
+    padding: .1em;
+    text-align: center;
+}
+
+#kills:hover:after {
+    content: "Average Kills over all games";
+    position: absolute;
+    top: 20px;
+    left: -10px;
+    background-color: white;
+    border: solid black 1px;
+    border-radius: 1em;
+    padding: .1em;
+    text-align: center;
+}
+
+#death:hover:after {
+    content: "Average deaths over all games";
+    position: absolute;
+    top: 20px;
+    left: -10px;
+    background-color: white;
+    border: solid black 1px;
+    border-radius: 1em;
+    padding: .1em;
+    text-align: center;
+}
+#assists:hover:after {
+    content: "Average Assists over all games";
+    position: absolute;
+    top: 20px;
+    left: -10px;
+    background-color: white;
+    border: solid black 1px;
+    border-radius: 1em;
+    padding: .1em;
+    text-align: center;
+}
+#kda:hover:after {
+    content: "Kills+ Assists to Deaths ratio";
+    position: absolute;
+    top: 20px;
+    left: -10px;
+    background-color: white;
+    border: solid black 1px;
+    border-radius: 1em;
+    padding: .1em;
+    text-align: center;
+}
+#kpart:hover:after {
+    content: "Percentage of kills participated in";
+    position: absolute;
+    top: 20px;
+    left: -10px;
+    background-color: white;
+    border: solid black 1px;
+    border-radius: 1em;
+    padding: .1em;
+    text-align: center;
+}
+#gold:hover:after {
+    content: "Average Gold Per Minute";
+    position: absolute;
+    top: 20px;
+    left: -10px;
+    background-color: white;
+    border: solid black 1px;
+    border-radius: 1em;
+    padding: .1em;
+    text-align: center;
+}
+#gametotal:hover:after {
+    content: "Total number of games";
+   position: absolute;
+    top: 20px;
+    left: -10px;
+    background-color: white;
+    border: solid black 1px;
+    border-radius: 1em;
+    padding: .1em;
+    text-align: center;
+}
+#creeps:hover:after {
+    content: "Creeps per minute";
+    position: absolute;
+    top: 20px;
+    left: -10px;
+    background-color: white;
+    border: solid black 1px;
+    border-radius: 1em;
+    padding: .1em;
+    text-align: center;
+}
+#multikills:hover:after {
+    content: "Triple kills/Quadra Kills/ Penta Kills";
+    position: absolute;
+    top: 20px;
+    left: -10px;
+    background-color: white;
+    border: solid black 1px;
+    border-radius: 1em;
+    padding: .1em;
+    text-align: center;
+}
+#bigcrit:hover:after {
+    content: "Largest Critical Strike(deprecated)";
+    position: absolute;
+    top: 20px;
+    left: -10px;
+    background-color: white;
+    border: solid black 1px;
+    border-radius: 1em;
+    padding: .1em;
+    text-align: center;
+}
+#fantasypoints:hover:after {
+    content: "A Fantasy score total from all games";
+   position: absolute;
+    top: 20px;
+    left: -10px;
+    background-color: white;
+    border: solid black 1px;
+    border-radius: 1em;
+    padding: .1em;
+    text-align: center;
+}
+@media screen and (max-width: 1300px) {
+    .week table{
+        width: 100%;
+   }
+}
+

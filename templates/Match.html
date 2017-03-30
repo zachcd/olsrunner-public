@@ -1,0 +1,126 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container-fluid">
+
+	<h1>{{matchinfo}}</h1>
+
+	<h3><a href="http://matchhistory.na.leagueoflegends.com/en/#match-details/NA1/{{matchinfo.matchID}}/{{matchinfo.team1Player1}}?tab=overview" target="_blank">Official Match History</a></h3>
+	<div class="row">
+		<div class="col-md-12">Game Header</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6">
+			<ul class="list-group">
+				<li class="list-group-item">
+					<div class="left_header">
+						<div class="match_nameplate"></div>
+						<div class="match_items"></div>
+						<div class="match_kda"
+					</div>
+				</li>
+				<li class="list-group-item">
+					<div class="match_player">
+						<div class="match_nameplate"><a href="/ols/p/{{players.0.player.SummonerNumber}}">{{players.0.player.PlayerIGN}}</a></div>
+						<div class="match_items"><img src="{{players.0.champ}}"></div>
+						<div class="match_kda">{{players.0.data.stats.kills}}/{{players.0.data.stats.deaths}}/{{players.0.data.stats.assists}}</div>
+						<div class="match_cs">{{players.0.data.stats.cs}}</div>
+						<div class="match_gold">{{players.0.data.stats.gold_earned}}</div>
+					</div>
+				</li>
+				<li class="list-group-item">
+					<div class="match_player">
+						<div class="match_nameplate"><a href="/ols/p/{{players.1.player.SummonerNumber}}">{{players.1.player.PlayerIGN}}</a></div>
+						<div class="match_items"><img src="{{players.1.champ}}"></div>
+						<div class="match_kda">{{players.1.data.stats.kills}}/{{players.1.data.stats.deaths}}/{{players.1.data.stats.assists}}</div>
+						<div class="match_cs">{{players.1.data.stats.cs}}</div>
+						<div class="match_gold">{{players.1.data.stats.gold_earned}}</div>
+					</div>
+				</li>
+				<li class="list-group-item">
+					<div class="match_player">
+						<div class="match_nameplate"><a href="/ols/p/{{players.2.player.SummonerNumber}}">{{players.2.player.PlayerIGN}}</a></div>
+						<div class="match_items"><img src="{{players.2.champ}}"></div>
+						<div class="match_kda">{{players.2.data.stats.kills}}/{{players.2.data.stats.deaths}}/{{players.2.data.stats.assists}}</div>
+						<div class="match_cs">{{players.2.data.stats.cs}}</div>
+						<div class="match_gold">{{players.2.data.stats.gold_earned}}</div>
+					</div>
+				</li>
+				<li class="list-group-item">
+					<div class="match_player">
+						<div class="match_nameplate"><a href="/ols/p/{{players.3.player.SummonerNumber}}">{{players.3.player.PlayerIGN}}</a></div>
+						<div class="match_items"><img src="{{players.3.champ}}"></div>
+						<div class="match_kda">{{players.3.data.stats.kills}}/{{players.3.data.stats.deaths}}/{{players.3.data.stats.assists}}</div>
+						<div class="match_cs">{{players.3.data.stats.cs}}</div>
+						<div class="match_gold">{{players.3.data.stats.gold_earned}}</div>
+					</div>
+				</li>
+				<li class="list-group-item">
+					<div class="match_player">
+						<div class="match_nameplate"><a href="/ols/p/{{players.4.player.SummonerNumber}}">{{players.4.player.PlayerIGN}}</a></div>
+						<div class="match_items"><img src="{{players.4.champ}}"></div>
+						<div class="match_kda">{{players.4.data.stats.kills}}/{{players.4.data.stats.deaths}}/{{players.4.data.stats.assists}}</div>
+						<div class="match_cs">{{players.4.data.stats.cs}}</div>
+						<div class="match_gold">{{players.4.data.stats.gold_earned}}</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="col-md-6">
+			<ul class="list-group">
+				<li class="list-group-item">
+					<div class="left_header">
+					</div>
+				</li>
+				<li class="list-group-item">
+					<div class="match_player">
+						<div class="match_nameplate"><a href="/ols/p/{{players.5.player.SummonerNumber}}">{{players.5.player.PlayerIGN}}</a></a></div>
+						<div class="match_items"><img src="{{players.5.champ}}"></div>
+						<div class="match_kda">{{players.5.data.stats.kills}}/{{players.5.data.stats.deaths}}/{{players.5.data.stats.assists}}</div>
+						<div class="match_cs">{{players.5.data.stats.cs}}</div>
+						<div class="match_gold">{{players.5.data.stats.gold_earned}}</div>
+					</div>
+				</li>
+				<li class="list-group-item">
+					<div class="match_player">
+						<div class="match_nameplate"><a href="/ols/p/{{players.6.player.SummonerNumber}}">{{players.6.player.PlayerIGN}}</a></div>
+						<div class="match_items"><img src="{{players.6.champ}}"></div>
+						<div class="match_kda">{{players.6.data.stats.kills}}/{{players.6.data.stats.deaths}}/{{players.6.data.stats.assists}}</div>
+						<div class="match_cs">{{players.6.data.stats.cs}}</div>
+						<div class="match_gold">{{players.6.data.stats.gold_earned}}</div>
+					</div>
+				</li>
+				<li class="list-group-item">
+					<div class="match_player">
+						<div class="match_nameplate"><a href="/ols/p/{{players.7.player.SummonerNumber}}">{{players.7.player.PlayerIGN}}</a></div>
+						<div class="match_items"><img src="{{players.7.champ}}"></div>
+						<div class="match_kda">{{players.7.data.stats.kills}}/{{players.7.data.stats.deaths}}/{{players.7.data.stats.assists}}</div>
+						<div class="match_cs">{{players.7.data.stats.cs}}</div>
+						<div class="match_gold">{{players.7.data.stats.gold_earned}}</div>
+					</div>
+				</li>
+				<li class="list-group-item">
+					<div class="match_player">
+						<div class="match_nameplate"><a href="/ols/p/{{players.8.player.SummonerNumber}}">{{players.8.player.PlayerIGN}}</a></div>
+						<div class="match_items"><img src="{{players.8.champ}}"></div>
+						<div class="match_kda">{{players.8.data.stats.kills}}/{{players.8.data.stats.deaths}}/{{players.8.data.stats.assists}}</div>
+						<div class="match_cs">{{players.8.data.stats.cs}}</div>
+						<div class="match_gold">{{players.8.data.stats.gold_earned}}</div>
+					</div>
+				</li>
+				<li class="list-group-item">
+					<div class="match_player">
+						<div class="match_nameplate"><a href="/ols/p/{{players.9.player.SummonerNumber}}">{{players.9.player.PlayerIGN}}</a></div>
+						<div class="match_items"><img src="{{players.9.champ}}"></div>
+						<div class="match_kda">{{players.9.data.stats.kills}}/{{players.9.data.stats.deaths}}/{{players.9.data.stats.assists}}</div>
+						<div class="match_cs">{{players.9.data.stats.cs}}</div>
+						<div class="match_gold">{{players.9.data.stats.gold_earned}}</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,134 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% load staticfiles %}
+<script src="{% static "jquery-ui-1.11.4/jquery-ui.js" %}"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script>
+  $(function() {
+    $( ".datepicker" ).datepicker();
+  });
+  </script>
+<div class="playoffcontainer">
+{% for series in playoffseries %}
+{% if series.id == 0 %}
+<div id="round16left">
+{% endif %}
+{% if series.id == 4 %}
+</div>
+<div id="round16right">
+{% endif %}
+
+{% if series.id == 8 %}
+</div>
+<div id="round8left">
+{% endif %}
+{% if series.id == 10 %}
+</div>
+<div id="round8right">
+{% endif %}
+
+{% if series.id == 12 %}
+</div>
+<div id="round4left">
+{% endif %}
+
+{% if series.id == 13 %}
+</div>
+<div id="round4right">
+{% endif %}
+{% if series.id == 14 %}
+</div>
+<div id="round2">
+{%endif %}
+
+
+<div class="series" id="series{{series.id}}">
+	{% if series.team1  %}
+		<div class="team1"> <a href="/ols/t/{{series.t1id}}">{{series.team1}}</a> </div>
+	{% endif %}
+	{% if series.team1 and series.team2 %}
+		<div class="Vs"> Vs </div>
+	{% endif %}
+	{% if series.team2  %}
+		<div class="team2"> <a href="/ols/t/{{series.t2id}}">{{series.team2}}</a> </div>
+	{% endif %}
+	{% if series.team1 and series.team2 %}
+		{% if series.match1 != 0 %}
+			<div class="match1result"> <a href="/ols/m/{{series.match1}}">1</a></div>
+		{% else %}
+			{% if series.canedit and series.date.ctime == "Sun Mar 13 00:00:00 2016"%}
+				<div class="schedule"> Set Date and time:
+				<form action="/ols/rescheduleplayoffs/" method="post">
+				{% csrf_token %}
+				<input type="hidden" name="match" value="{{series.id}}"><input name="date" type="text" class="datepicker" value="{{series.date}}"> <input type="text" name="time" class="time" value="{{series.time}}"> <input type="submit" value="Submit">
+			</form></div>
+			{% elif series.canedit %}
+				<div class="schedule"> Set Date and time:
+				<form action="/ols/rescheduleplayoffs/" method="post">
+				{% csrf_token %}
+				<input type="hidden" name="match" value="{{series.id}}"><input name="date" type="text" class="datepicker" value="{{series.date}}"> <input type="text" name="time" class="time" value="{{series.time}}"> <input type="submit" value="Submit">
+			</form></div>
+				<span class="match1code"> <b>Game 1:</b> {{series.code1}} </span>
+			{% elif series.date.ctime == "Sun Mar 13 00:00:00 2016"%}
+				<div class="unscheduled"> Series not scheduled </div>
+			{% else %}
+				<div class="date"> Series is on {{series.date}} @ {{series.time}}</div>
+			{% endif %}
+		{% endif %}
+
+		{% if series.match2 != 0 %}
+			<div class="match2result"> <a href="/ols/m/{{series.match2}}">2</a></div>
+		{% else %}
+			{% if series.canedit and series.date.ctime != "Sun Mar 13 00:00:00 2016" %}
+				<span class="match2code"> <b>Game 2:</b> {{series.code2}} </span>
+			{% endif %}
+		{% endif %}
+
+		{% if series.match3 != 0 %}
+			<div class="match3result"> <a href="/ols/m/{{series.match3}}">3</a></div>
+			{% else %}
+			{% if series.canedit and series.date.ctime != "Sun Mar 13 00:00:00 2016" %}
+				<span class="match3code"> <b>Game 3: </b>{{series.code3}} </span>
+			{% endif %}
+		{% endif %}
+		{% if series.roundof ==  2 %}
+			{% if series.match4 != 0 %}
+			<div class="match4result"> <a href="/ols/m/{{series.match4}}">4</a></div>
+			{% else %}
+				{% if series.canedit and series.date.ctime != "Sun Mar 13 00:00:00 2016" %}
+				<span class="match4code"> Game 4: {{series.code4}} </span>
+				{% endif %}
+			{% endif %}
+			{% if series.match5 != 0 %}
+			<div class="match5result"> <a href="/ols/m/{{series.match5}}">5</a></div>
+			{% else %}
+				{% if series.canedit and series.date.ctime != "Sun Mar 13 00:00:00 2016" %}
+				<span class="match5code"> Game 5: {{series.code5}} </span>
+				{% endif %}
+			{% endif %}
+		{% endif %}
+	{% endif %}
+	{% if not series.team1 or not series.team2 %}
+		{% if series.roundof == 8 %}
+			<span class="noTeam"> Quarterfinal Series</span>
+		{% elif series.roundof == 4 %}
+			<span class="noTeam"> Semifinal Series</span>
+		{% elif series.roundof == 2 %}
+			<span class="noTeam"> Grand Finals</span>
+		{% endif %}
+	{% endif %}
+
+
+
+</div>
+
+{% endfor %}
+</div>
+</div>
+
+
+
+
+
+{% endblock %}

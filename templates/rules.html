@@ -1,0 +1,193 @@
+{% extends "base.html" %}
+
+
+
+{% block content %}
+<style type="text/css">
+	#entry li, #draft li, #dates li, #match li, #prep li, #ingame li, #quitter li, #select li, #smurfs li {
+		display: none;
+	}
+	#entry:target li, #draft:target li, #dates:target li, #match:target li, #prep:target li, #ingame:target li, #quitter:target li, #select:target li, #smurfs:target li{
+		display: list-item;
+	}
+	#rules:target li {
+		display: list-item;
+	}
+
+
+</style>
+<div class="rules">
+ <h1>University of Pittsburgh Open League Series Rules</h1>
+<p>These are the complete rules for participation in the University of Pittsburgh Open League Series. Any questions or concerns not addressed here should be brought to the attention of a tournament administrator so that amendments can be made.</p>
+
+Note: these rules are largely common sense, and are here only to make the league run as smoothly as possible.
+<br />
+<a href="#rules">Expand All</a>
+<br />
+<ol id="rules">
+	<li> <a href="#entry">Tournament Entry</a></li>
+	<ul id="entry">
+		<li>Entry is free.</li>
+		<li>Participants must be level 30 and have played placement games. </li>
+		<li>All participants must be a part of the <a href="https://www.facebook.com/groups/LoLatPitt/" target="_blank">LoL@Pitt Facebook group.</a></li>
+		<li>Signup details will be announced on the facebook page. </li>
+		<li>Signups must be filled out with honest intent.</li>
+		<li>Smurfs and entries that are meant to misrepresent player skill will result in removal from the draft.</li>
+	</ul>
+	<li><a href="#draft"> Captains and the Draft</a></li>
+	<ul id="draft">
+		<li>Teams will have one (1) captain each. The captain will be in charge of scheduling games for their team to play.</li>
+		<li>Captains will be chosen among volunteers, at the discretion of admins.</li>
+		<li>Captains will be made aware of the format and rules prior to the draft, and follow the laid out procedure to draft a team.</li>
+		<li>Captains that cannot perform their drafting duties must appoint a proxy drafter before drafting begins.</li>
+		<li>Captains that do not appoint a proxy drafter within half an hour of draft start will be assigned one by the admins</li>
+	</ul>
+	<li><a href="#quitter"> Quitting the OLS</a></li>
+	<ul id="quitter">
+		<li>Players that choose to quit the OLS may do so by notifying their team captain so that a replacement may be found. Replacements must be approved by the tournament admin. When looking for replacements aim for a player that is objectively worse or similar in skill to the player replaced. </li>
+		<li>Players who quit multiple OLS splits will be banned from future splits.</li>
+	</ul>
+
+	<li><a href="#dates"> Match Dates and Times</a></li>
+	<ul id="dates">
+		<li>Each of the weekly rounds will begin and end on Sundays at midnight.</li>
+		<li>Postponing past Sunday must be approved by an admin</li>
+		<li>Rescheduling matches is allowed if agreed to by both teams.</li>
+		<ul>
+			<li>Matches may be rescheduled to any time during the week, as long as it is done twenty-four (24) hours before the originally agreed-upon time and before the end of the series week.</li>
+			<li>If a new match time cannot be agreed upon, the team that cannot show up will be given an automatic loss.</li>
+			<li>Emergency rescheduling will be allowed upon approval by a tournament admin.</li>
+		</ul>
+	</ul>
+<li><a href="#match"> Match Rules</a></li>
+	<ol id="match">
+		<li>Series of Two</li>
+		<ul>
+			<li>All matches played in the normal season will be series of two.</li>
+			<li>Teams listed on the left in the schedule will be on the Blue Side for the first game and then swapped.</li>
+			<li>First win of a series awards 1 point.  Two wins in a series awards 3 points.</li>
+		</ul>
+		<li>Best of Three</li>
+		<ul>
+			<li>Playoff matches will be best of three.</li>
+			<li>The sides for the first match of the series are chosen by the higher seed.</li>
+			<li>After each match, teams must switch sides.</li>
+		</ul>
+		<li> Best of Five</li>
+		<ul>
+			<li>Finals will be best of 5.</li>
+			<li>The sides for the first match of the series are chosen by the higher seed.</li>
+			<li>After each match, teams must switch sides.</li>
+		</ul>
+	</ol>
+<li><a href="#prep"> Game Preparations</a></li>
+	<ul id="prep">
+		<li>All games must be made using the provided Tournament codes</li>
+		<li>The game must start within 15 minutes of the scheduled time, regardless of hardware problems. After the allotted time has passed the captain with all of his players can call for a forfeit of game 1. After 30 minutes have passed the prepared captain can force a forfeit for both games. </li>
+		<li>Emergency appeals can be made to an admin if serious issues prevented the game from occurring at a scheduled time and was unable to be rescheduled before that time. </li>
+	</ul>
+<li><a href="#select"> Champion Select/Substitutions</a></li>
+	<ol id="select"> 
+		<li>General Champion Select</li>
+		<ul>
+			<li>New or reworked champions are globally banned for two weeks of the OLS after their release. This does not include visual reworks.</li>
+			<li>Champions may also be banned by popular vote of the captains</li>
+			<li>If a champion is not owned by a player who wishes to pick it for their team, they may instead pick a different champion as a substitute; this is a “proxy pick”.</li>
+			<li>Proxy picks are allowed, as long as the opposing team is notified by a member of the team doing the proxy pick before the champion is locked in.</li>
+			<li>After proxy champions are locked, the game must be remade using the same lobby and tournament code and each player must pick the champions they will play and the captains must ban the same champions. </li>
+		</ul>
+		<li>Substitutions</li>
+		<ul>
+			<li>Substitutes are allowed in the OLS, to a maximum of 2 (two) substituted players per match per team.</li>
+			<li>The process for finding a substitute is as follows: the captain of the team needing a substitute propose a player they believe is suitable (the same ability or worse than the player being replaced.) If the other captain denies the sub, the tournament admin will decide if it is fair. If a captain fails to propose a proper substitute three times, the admins will provide one for them.</li>
+		</ul>
+	</ol>
+<li><a href="#ingame">In-game</a></li>
+	<ol id="ingame">
+		<li>Pauses</li>
+		<ul>
+			<li>Teams may pause for up to fifteen (15) minutes per game. If a team reaches this limit, the game must be un-paused and must continue.</li>
+			<li>When the pausing team is ready, they must message the other team in all-chat to make sure everyone is ready before unpausing the game.</li>
+		</ul>
+	 	<li>Rematches</li>
+	 	<ul>
+			<li>Teams may agree to a rematch, if it is needed to solve technical problems.</li>
+			<li>However, games may only be re-made if none of the following have happened: first blood, one-minute mark, or getting vision of an opponent.</li>
+			<li>Rematches must use the same picks and bans.</li>
+		</ul>
+		<li> All-Chat</li>
+		<ul>
+			<li>Use of all-chat in a match is allowed. However, keep in mind that this league is for fun, and unjustified verbal abuse or spamming may result in penalization.</li>
+		</ul>
+		<li> Spectators</li>
+		<ul>
+			<li>Spectators are only allowed if both teams agree to them. Exceptions to this are tournament administrators and casters.</li>
+		</ul>
+	</ol>
+<li><a href="#smurfs">Smurfing</a></li>
+	<ol id="smurfs">
+		<li>Accounts</li>
+		<ul>
+			<li>Accounts that are found to be smurfs will be blacklisted and cannot be used as subs or be signed up to play</li>
+		</ul>
+		<li>Players</li>
+		<ul>
+			<li>Players that signed up for the OLS on a smurf account will be removed from the OLS for that split and the following split</li>
+		</ul>
+		<li>Teams</li>
+		<ul>
+			<li>Established awareness of the smurf influences the punishment for teams, if the captain was aware of the smurf before the draft than all games are considered ffs</li>
+			<li> If the Captain was unaware then the team ffs one win out of every one of their series.</li>
+			<li> These games can be replayed by the discretion of the non-smurf team's captain, the best of 1 is worth 2 points instead of 1 point</li>
+		</ul>
+</ol>
+
+Questions, comments, or concerns? Talk to the admins!<br />
+
+Tournament Admin:
+	Drew Salley - asalley11@gmail.com - IGN: SUCC Sexybabe69<br />
+*The contents of this document are subject to amendment pending officer/captain discussion.
+
+<br />
+<br />
+<br /><br />
+</div>
+{% endblock %}
+
+<script> //get a reference to the nav <ul>
+$rules = $("#rules");
+
+
+//hide all but the first sub list
+$rules.hide();
+
+
+//mark the first sub list as open
+$rules.find("ul:first").addClass("open");
+
+
+//receive clicks on the section links
+$rules.on("click", "#nav>li>a", function(e){
+
+
+    //get a reference to the currently clicked link and its list item
+    $this = $(this);
+    $currentLi = $this.closest("li");
+    
+    //if our current section is open, just return
+    if ($currentLi.find(".open").is("ul")) {
+        //if you want a section link to be able to collapse itself, uncomment this line:
+        //$currentLi.find("ul.open").slideUp().removeClass("open")
+        
+        return; 
+    }
+
+
+    //close all open lists
+    $rules.find("ul.open").slideUp().removeClass("open");
+    
+    //open the submenu that belongs to this section
+    $currentLi.find("ul").slideDown().addClass("open");
+
+
+}); </script>
